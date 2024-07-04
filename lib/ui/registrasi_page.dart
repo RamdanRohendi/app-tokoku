@@ -27,16 +27,23 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(20.0),
           child: Form(
             key: _formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                const SizedBox(
+                  height:100,
+                ),
+                const Icon(Icons.person_add, size: 140.0),
                 _namaTextField(),
                 _emailTextField(),
                 _passwordTextField(),
                 _passwordKonfirmasiTextField(),
+                const SizedBox(
+                  height:40,
+                ),
                 _buttonRegistrasi()
               ],
             ),
@@ -49,7 +56,10 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
   //Membuat Textbox Nama 
   Widget _namaTextField() {
     return TextFormField(
-      decoration: const InputDecoration (labelText: "Nama"),
+      decoration: const InputDecoration (
+        labelText: "Nama",
+        icon: Icon(Icons.person)
+      ),
       keyboardType: TextInputType.text,
       controller: _namaTextboxController,
       validator: (value) {
@@ -64,7 +74,10 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
   //Membuat Textbox email
   Widget _emailTextField() {
     return TextFormField(
-      decoration: const InputDecoration(labelText: "Email"),
+      decoration: const InputDecoration(
+        labelText: "Email",
+        icon: Icon(Icons.mail)
+      ),
       keyboardType: TextInputType.emailAddress,
       controller:_emailTextboxController,
       validator: (value) {
@@ -88,7 +101,10 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
   //Membuat Textbox password
   Widget _passwordTextField() {
     return TextFormField(
-      decoration: const InputDecoration(labelText: "Password"),
+      decoration: const InputDecoration(
+        labelText: "Password",
+        icon: Icon(Icons.key)
+      ),
       keyboardType: TextInputType.text,
       obscureText: true,
       controller:_passwordTextboxController,
@@ -105,7 +121,10 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
   //membuat textbox Konfirmasi Password
   Widget _passwordKonfirmasiTextField() {
     return TextFormField(
-      decoration: const InputDecoration(labelText: "Konfirmasi Password"),
+      decoration: const InputDecoration(
+        labelText: "Konfirmasi Password",
+        icon: Icon(Icons.key)
+      ),
       keyboardType: TextInputType.text,
       obscureText: true,
       validator: (value) {
@@ -121,7 +140,10 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
   //Membuat Tombol Registrasi
   Widget _buttonRegistrasi() {
     return ElevatedButton(
-      child: const Text("Registrasi"),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(Colors.lightBlue)
+      ),
+      child: const Text("Registrasi", style: TextStyle(color: Colors.white)),
       onPressed: () {
         var validate = _formKey.currentState!.validate();
         if (validate) {

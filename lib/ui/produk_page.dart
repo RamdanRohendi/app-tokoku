@@ -5,6 +5,7 @@ import 'package:tokoku/model/produk.dart';
 import 'package:tokoku/ui/login_page.dart';
 import 'package:tokoku/ui/produk_detail.dart';
 import 'package:tokoku/ui/produk_form.dart';
+import 'package:tokoku/ui/profile_detail.dart';
 
 class ProdukPage extends StatefulWidget{
   const ProdukPage({Key? key}) : super(key: key);
@@ -37,6 +38,15 @@ class _ProdukPageState extends State<ProdukPage> {
         child: ListView(
           children: [
             ListTile(
+              title: const Text('Profile'),
+              trailing: const Icon(Icons.person),
+              onTap: () async {
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const ProfileDetail())
+                );
+              },
+            ),
+            ListTile(
               title: const Text('Logout'),
               trailing: const Icon(Icons.logout),
               onTap: () async {
@@ -46,7 +56,7 @@ class _ProdukPageState extends State<ProdukPage> {
                   )
                 });
               },
-            )
+            ),
           ],
         ),
       ),
@@ -104,7 +114,7 @@ class ItemProduk extends StatelessWidget {
       child: Card(
         child: ListTile(
           title: Text(produk.namaProduk!),
-          subtitle: Text(produk.hargaProduk.toString()),
+          subtitle: Text("Rp" + produk.hargaProduk.toString()),
         ),
       ),
     );

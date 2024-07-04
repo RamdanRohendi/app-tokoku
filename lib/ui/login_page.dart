@@ -6,9 +6,10 @@ import 'package:tokoku/ui/registrasi_page.dart';
 import 'package:tokoku/widget/warning_dialog.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _LoginPageState createState() => _LoginPageState();
 }
 
@@ -27,16 +28,26 @@ class _LoginPageState extends State<LoginPage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(20.0),
           child: Form(
             key: _formKey,
             child: Column(
               children: [
+                const SizedBox(
+                  height:100,
+                ),
+                const Icon(Icons.shop_sharp, size: 140.0),
+                const SizedBox(
+                  height:20,
+                ),
                 _emailTextField(),
                 _passwordTextField(),
-                _buttonLogin(),
                 const SizedBox(
                   height:30,
+                ),
+                _buttonLogin(),
+                const SizedBox(
+                  height:20,
                 ),
                 _menuRegistrasi()
               ],
@@ -50,7 +61,10 @@ class _LoginPageState extends State<LoginPage> {
   //Membuat Textbox email
   Widget _emailTextField() {
     return TextFormField(
-      decoration: const InputDecoration(labelText: "Email"),
+      decoration: const InputDecoration(
+        labelText: "Email",
+        icon: Icon(Icons.mail)
+      ),
       keyboardType: TextInputType.emailAddress,
       controller: _emailTextboxController,
       validator: (value) {
@@ -66,7 +80,10 @@ class _LoginPageState extends State<LoginPage> {
   //Membuat Textbox password
   Widget _passwordTextField() {
     return TextFormField(
-      decoration: const InputDecoration(labelText: "Password"),
+      decoration: const InputDecoration(
+        labelText: "Password",
+        icon: Icon(Icons.key)
+      ),
       keyboardType: TextInputType.text,
       obscureText: true,
       controller: _passwordTextboxController,
@@ -83,7 +100,10 @@ class _LoginPageState extends State<LoginPage> {
   //Membuat Tombol Login
   Widget _buttonLogin() {
     return ElevatedButton(
-      child: const Text("Login"),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(Colors.lightBlue)
+      ),
+      child: const Text("Login", style: TextStyle(color: Colors.white)),
       onPressed: () {
         var validate = _formKey.currentState!.validate();
         
