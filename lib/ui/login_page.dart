@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: [
                 const SizedBox(
-                  height:100,
+                  height:60,
                 ),
                 const Icon(Icons.shop_sharp, size: 140.0),
                 const SizedBox(

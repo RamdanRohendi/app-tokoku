@@ -48,13 +48,21 @@ class _ProfileFormState extends State<ProfileForm> {
       appBar: AppBar(title: Text(judul)),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(20.0),
           child: Form(
             key: _formKey,
             child: Column(
               children: [
+                const SizedBox(
+                  height:20,
+                ),
+                const Text("Data Diri"),
                 _namaTextField(),
                 _emailTextField(),
+                const SizedBox(
+                  height:40,
+                ),
+                const Text("Ubah Password"),
                 _currentPasswordTextField(),
                 _newPasswordTextField(),
                 _confirmPasswordTextField(),

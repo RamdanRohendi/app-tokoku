@@ -34,7 +34,7 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(
-                  height:100,
+                  height:20,
                 ),
                 const Icon(Icons.person_add, size: 140.0),
                 _namaTextField(),

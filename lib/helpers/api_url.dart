@@ -1,5 +1,6 @@
 class ApiUrl {
-  static const String baseUrl = 'http://10.0.2.2/tokoku/public';
+  // static const String baseUrl = 'http://10.0.2.2/tokoku/public';
+  static const String baseUrl = 'http://192.168.173.25/tokoku/public';
   // static const String baseUrl = 'https://tokoapi.ramand.my.id';
   static const String registrasi = baseUrl + '/registrasi';
   static const String login = baseUrl + '/login';

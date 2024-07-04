@@ -51,7 +51,7 @@ class ShowProfile extends StatelessWidget{
           Center(
             child: Column(
               children: [
-                Image.asset('assets/images/default-profile.jpg'),
+                Image.asset('assets/images/default-profile.jpg', height: 200),
                 Text(
                   "${profile!.nama}",
                   style: const TextStyle(fontSize: 20.0),
